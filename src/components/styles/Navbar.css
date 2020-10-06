@@ -1,0 +1,94 @@
+.navbar{
+  z-index: 1;
+  pointer-events: none;
+  position: fixed;
+  height: 100vh;
+  width: 100vw;
+  top: 0;
+}
+.navbar-logo{
+  font-family: 'Roboto Slab', serif;
+  text-decoration: none;
+  color: white;
+  font-size: calc(1em + 0.8vw)
+}
+.navbar-container{
+  pointer-events: all;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1em 5vw;
+  background-color: #242D2D;
+}
+
+.navbar-container i{
+  cursor: pointer;
+  color: white;
+  font-size: calc(1em + 1vw);
+}
+
+.navbar-menu{
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transform: translateX(-100%);
+  background-color: #242D2D;
+}
+
+.active{
+  transition: 0.5s ease-in;
+  transform: translateX(0);
+  pointer-events: all;
+}
+
+.navbar-menu-item{
+  list-style: none;
+  width: 100%;
+  padding: 2em 0;
+  text-align: center;
+  font-weight: bold;
+  font-size: calc(1.2em + 1vw);
+
+}
+
+.navbar-link-item:after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  right: 0;
+  width: 0;
+  bottom: -5px;
+  background: white;
+  height: 2px;
+  transition-property: width;
+  transition-duration: 0.3s;
+  transition-timing-function: ease-out;
+}
+
+.navbar-link-item:hover:after, .navbar-link-item:focus:after, .navbar-link-item:active:after {
+  left: 0;
+  right: auto;
+  width: 100%;
+}
+
+.navbar-link-item{
+  cursor: pointer;
+  text-decoration: none;
+  color: white;
+  display: inline;
+  position: relative;
+  overflow: hidden;
+}
+
+@media screen and (min-width: 320px){
+  .navbar-container{
+    padding: 1em 10.5vw 1em 4.5vw;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .navbar-container{
+    padding: 1em 10.5vw 1em 9.5vw;
+  }
+}

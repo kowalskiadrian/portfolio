@@ -1,0 +1,107 @@
+.home{
+  margin: 15vh auto 10vh auto;
+  width: 90vw;
+  display: grid;
+  position: relative;
+  grid-template: repeat(8, 1fr) / repeat(1, 1fr);
+  grid-gap: 0.5em;
+  grid-template-areas:
+  "Hero"
+  "Project-1"
+  "Project-2"
+  "Project-3"
+  "Project-4"
+  "Project-5"
+  "About"
+  "Contact";
+}
+
+.Hero {
+  grid-area: Hero;
+}
+.Hero-logo{
+  grid-area: hero-logo;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #00000036;
+}
+.img-wrapper {
+  width: 60%;
+  height: 60%;
+  background-image: url('../images/logo.svg');
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+.Project-1 {
+  grid-area: Project-1;
+}
+
+.Project-2 {
+  grid-area: Project-2;
+}
+
+.Project-3 {
+  grid-area: Project-3;
+}
+
+.Project-4 {
+  grid-area: Project-4;
+}
+
+.Project-5 {
+  grid-area: Project-5;
+}
+.About {
+  grid-area: About;
+}
+.Contact {
+  grid-area: Contact;
+}
+.About-illustration{
+  grid-area: About-illustration;
+  background-color: #00000036;
+  background-image: url('../images/me.svg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: bottom center;
+}
+
+.intro-text{
+  position: absolute;
+  top: 5%;
+  left: 50%;
+  transform: translate(-50%);
+  z-index: -1;
+  font-size: calc(3em + 5vw);
+}
+
+@media screen and (min-width: 768px) {
+  .home{
+    max-width: 90vw;
+    grid-template: repeat(6, 1fr) / repeat(2, 1fr);;
+    grid-template-areas:
+    "hero-logo Hero"
+    "Project-1 Project-1"
+    "Project-2 Project-3"
+    "Project-4 Project-5"
+    "About About-illustration"
+    "Contact Contact";
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .home{
+    max-width: 80vw;
+    grid-template: repeat(6, 1fr) / repeat(3, 1fr);;
+    grid-template-areas:
+    "hero-logo Hero Hero"
+    "Project-1 Project-1 Project-2"
+    "Project-4 Project-3 Project-3"
+    "Project-5 Project-3 Project-3"
+    "About About About-illustration"
+    "Contact Contact Contact";
+  }
+
+}
